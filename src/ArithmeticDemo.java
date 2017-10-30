@@ -4,9 +4,9 @@ import java.util.Scanner;
 /**
  * Created by danderson on 10/29/17.
  */
-public class Demo {
+public class ArithmeticDemo {
     public static void main(String[] args){
-        int lhs, rhs, b, p, m;
+        int lhs, rhs;
         List<Integer> lhsBinary, rhsBinary, sum, product;
         String sumString, productString;
 
@@ -27,19 +27,13 @@ public class Demo {
         sum = BinaryArithmetic.binarySum(lhsBinary, rhsBinary);
         sumString = BaseConversion.convertToBase2String(sum);
         System.out.println("Ths sum of the two binary numbers is: " + sumString + " (" +
-                Integer.parseInt(sumString, 2) + ")");
+                Integer.parseInt(sumString, 2) + " in base 10)");
 
         product = BinaryArithmetic.binaryProduct(lhsBinary, rhsBinary);
         productString = BaseConversion.convertToBase2String(product);
         System.out.println("The product of the two binary numbers is: " + productString + " (" +
-                Integer.parseInt(productString, 2) + ")");
+                Integer.parseInt(productString, 2) + " in base 10)");
 
-        System.out.println();
-
-        System.out.print("Enter b, p (for computation b^p): ");
-        b = kbd.nextInt();
-        p = kbd.nextInt();
-        System.out.println(b + "^" + p + " equals: " + BinaryArithmetic.binaryModularExponentiation(b, p));
 
         kbd.close();
     }
